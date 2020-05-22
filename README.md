@@ -1,6 +1,4 @@
-# bankconnect-demo
-Steps to integrate FinBox bankconnect SDK
-
+# Sample Project for BankConnect Android Client SDK 
 
 ## Steps to start
 
@@ -15,7 +13,8 @@ In `MainActivity.kt` you can find the implementation of the SDK. Add `FinboxBank
         .build()
 ```
 
-##LiveData
+## LiveData
+
 `bankConnect.getPayloadLiveData()` holds the livedata that is updated for every event. In order to listen for callbacks, observe the livedata
 
 ```kotlin
