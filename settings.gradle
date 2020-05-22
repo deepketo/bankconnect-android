@@ -1,0 +1,2 @@
+rootProject.name='BankConnect Demo'
+include ':app'
