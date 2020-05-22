@@ -13,7 +13,7 @@ In `MainActivity.kt` you can find the implementation of the SDK. Add `FinboxBank
         .build()
 ```
 
-## LiveData
+## Live Data
 
 `bankConnect.getPayloadLiveData()` holds the livedata that is updated for every event. In order to listen for callbacks, observe the livedata
 
