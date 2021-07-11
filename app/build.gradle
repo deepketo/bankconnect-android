@@ -39,6 +39,14 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation('in.finbox:bankconnect:1.5.71:release@aar') {
         transitive = true
+        exclude group: "in.finbox", module: "common"
+        exclude group: "in.finbox", module: "logger"
+    }
+    implementation("in.finbox:common:0.6.1:parent-release@aar") {
+        transitive = true
+    }
+    implementation("in.finbox:logger:0.6.1:parent-release@aar") {
+        transitive = true
     }
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.13.2'
