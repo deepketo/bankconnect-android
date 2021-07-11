@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+Properties properties = new Properties()
+properties.load(new FileInputStream(project.rootProject.file('local.properties')))
+
 buildscript {
     ext.kotlin_version = '1.5.20'
     repositories {
@@ -21,7 +24,14 @@ allprojects {
         google()
         jcenter()
         maven {
-            url  "https://dl.bintray.com/finbox/BankConnect"
+            url properties.getProperty('AWS_BUCKET_URL')
+            credentials(AwsCredentials) {
+                accessKey = properties.getProperty('AWS_ACCESS_KEY')
+                secretKey = properties.getProperty('AWS_SECRET_KEY')
+            }
+            content {
+                includeGroup("in.finbox")
+            }
         }
     }
 }
